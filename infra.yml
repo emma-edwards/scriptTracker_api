@@ -22,7 +22,13 @@ Transform:
   set of transforms
 
 Resources:
-  set of resources
+  ScriptTrackerECSCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: ScriptTrackerECSCluster
+      CapacityProviders:
+        - FARGATE
+        
 
 Outputs:
   set of outputs
