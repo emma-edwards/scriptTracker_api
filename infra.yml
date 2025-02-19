@@ -1,4 +1,4 @@
-AWSTemplateFormatVersion: '19-02-2025'
+AWSTemplateFormatVersion: '2010-09-09'
 
 Resources:
   VPC:
@@ -87,7 +87,7 @@ Resources:
       ExecutionRoleArn: !Ref ECSTaskExecutionRole
       ContainerDefinitions:
         - Name: script-tracker-api
-          Image: 'docker.io/emmaedwards/script-tracker-api:main'
+          Image: '402101553497.dkr.ecr.ap-southeast-2.amazonaws.com/script-tracker/api'
           Essential: true
           PortMappings:
             - ContainerPort: 443
