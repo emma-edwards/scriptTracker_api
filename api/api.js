@@ -6,9 +6,9 @@ const PORT = process.env.PORT || 443
 
 app.use(express.json());
 
-app.get("/script-tracker/api/status", (request, response) => {
+app.get("/script-tracker/api/health", (request, response) => {
     const status = {
-        "Status": "Running"
+        "Status": "Healthy"
     }
 
     response.send(status);
