@@ -1,8 +1,10 @@
 AWSTemplateFormatVersion: 2010-09-09
 
 Parameters:
+  port:
+    Type: String
   env:
-    Type: string
+    Type: String
 
 Resources:
   VPC:
