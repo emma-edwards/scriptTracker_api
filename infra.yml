@@ -189,7 +189,26 @@ Resources:
                 Action:
                   - logs:CreateLogStream
                   - logs:PutLogEvents
-                Resource: '*'  
+                  - logs:CreateLogGroup
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - ecr:GetAuthorizationToken
+                  - ecr:BatchCheckLayerAvailability
+                  - ecr:GetDownloadUrlForLayer
+                  - ecr:BatchGetImage
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - ecs:RunTask
+                  - ecs:RegisterTaskDefinition
+                  - ecs:DescribeTasks
+                  - ecs:UpdateService
+                  - iam:PassRole
+                  - elasticloadbalancing:RegisterTargets
+                  - ec2:DescribeNetworkInterfaces
+                  - ec2:CreateNetworkInterface
+                Resource: '*'
 
   ALBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
