@@ -166,7 +166,7 @@ Resources:
     Properties:
       RoleName: ecsTaskExecutionRole
       AssumeRolePolicyDocument:
-        Version: '19-02-2025'
+        Version: '2012-10-17'
         Statement:
           - Effect: Allow
             Principal:
@@ -177,7 +177,7 @@ Resources:
       Policies:
         - PolicyName: AmazonECSTaskExecutionPolicy
           PolicyDocument:
-            Version: '19-02-2025'
+            Version: '2012-10-17'
             Statement:
               - Effect: Allow
                 Action:
