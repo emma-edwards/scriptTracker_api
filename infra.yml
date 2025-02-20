@@ -93,16 +93,16 @@ Resources:
       ExecutionRoleArn: !Ref ECSTaskExecutionRole
       ContainerDefinitions:
         - Name: script-tracker-api
-          Image: '402101553497.dkr.ecr.ap-southeast-2.amazonaws.com/script-tracker/api'
+          Image: '402101553497.dkr.ecr.ap-southeast-2.amazonaws.com/script-tracker/api:latest'
           Essential: true
           PortMappings:
             - ContainerPort: 443
-          # LogConfiguration:
-          #   LogDriver: awslogs
-          #   Options:
-          #     awslogs-group: !Ref CloudWatchLogGroup
-          #     awslogs-region: !Ref AWS::Region
-          #     awslogs-stream-prefix: ecs
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref CloudWatchLogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: ecs
 
   CloudWatchLogGroup:
     Type: AWS::Logs::LogGroup
