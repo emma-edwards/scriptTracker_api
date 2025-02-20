@@ -112,6 +112,7 @@ Resources:
 
   ECSService:
     Type: AWS::ECS::Service
+    DependsOn: ALBListener
     Properties:
       Cluster: !Ref ECSCluster
       ServiceName: script-tracker-ecsservice
